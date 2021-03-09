@@ -1,10 +1,10 @@
 import React, {useState, useEffect} from 'react';
 import axios from 'axios'
 
-import Categories from '../components/Categories';
-import ProductCard from '../components/ProductCard';
-import "../styles/Landing.css"
-import Filters from '../components/Filters';
+import Categories from '../../components/Categories/Categories';
+import ProductCard from '../../components/ProductCard/ProductCard';
+import "./Landing.css"
+import Filters from '../../components/Filters/Filters';
 
 const Landing = () => {
     const categories = ['all', 'monitor', 'keyboard', 'mouse', 'headset']

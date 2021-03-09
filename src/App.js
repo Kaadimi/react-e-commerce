@@ -1,9 +1,9 @@
 import './App.css';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
-import Landing from './containers/Landing'
-import Product from './containers/Product';
-import Cart from './containers/Cart';
-import Navbar from './components/Navbar';
+import Landing from './containers/Landing/Landing'
+import Product from './containers/Product/Product';
+import Cart from './containers/Cart/Cart';
+import Navbar from './components/Navbar/Navbar';
 
 function App() {
   return (

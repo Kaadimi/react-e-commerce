@@ -1,5 +1,5 @@
 import React from 'react';
-import "../styles/Landing.css"
+import "./Categories.css"
 
 const Categories = ({categories, selected, setCategory}) => {
     return (
