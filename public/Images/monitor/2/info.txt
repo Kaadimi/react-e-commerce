@@ -1,0 +1,19 @@
+title: ASUS TUF Gaming 27" 2K HDR Gaming Monitor (VG27AQ) - WQHD (2560 x 1440), 165Hz (Supports 144Hz), 1ms, Extreme Low Motion Blur, Speaker, G-SYNC Compatible, VESA Mountable, DisplayPort, HDMI
+
+rating: 4.5
+
+price: 425.49
+
+description: 27 inch WQHD (2560x1440) IPS gaming monitor with 1ms (MPRT) response time 165Hz refresh rate (supports 144Hz) and G-SYNC compatibility for a tear-free experience
+ASUS Extreme Low Motion Blur Sync (ELMB Sync) Technology enables a 1ms response time (MPRT) together with Adaptive-Sync eliminating ghosting and tearing for sharp gaming visuals with high frame rates
+Marathon ready with ASUS Eye Care technology to minimize eye fatigue and an ergonomic stand with full height/tilt/swivel/pivot adjustments to accommodate any desk
+Compatible with industry-standard HDR10 High Dynamic Range for color and brightness levels that exceed the capabilities of ordinary monitors
+Flexible connectivity options with DisplayPort 1.2 and Dual HDMI (V2.0)
+
+
+info: 
+Screen Size	27 Inches
+Resolution	QHD Wide 1440p
+Display Technology	LED
+Brand	ASUS
+Series	VG27AQ

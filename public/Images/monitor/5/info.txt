@@ -1,0 +1,24 @@
+title: LG 34WN80C-B 34 inch 21:9 Curved UltraWide WQHD IPS Monitor with USB Type-C Connectivity sRGB 99 percentage Color Gamut and HDR10 Compatibility, Black
+
+rating: 4.5
+
+price: 549.99
+
+description: 34” 21: 9 WQHD (3440 X 1440) Curved IPS display
+USB type-C connectivity
+HDR 10 compatible
+Supports sRGB 99% color gamut
+Height & tilt adjustable stand
+On-screen control
+Curved display. Brightness:300cd (typ) / 240cd (Min)
+
+
+info: 
+Screen Size	34 Inches
+Resolution	QHD Ultra Wide 1440p
+Display Technology	LED
+Brand	LG
+Series	34WN80C-B
+
+
+max-width: 395px; max-height: 395px;
