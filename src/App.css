@@ -5,7 +5,7 @@ body {
   background: #FAFAFA;
 }
 
-button, input {
+button {
   cursor: pointer;
 }
 

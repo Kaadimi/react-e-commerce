@@ -1,24 +1,21 @@
 import React, {useState, useEffect} from 'react';
-import axios from 'axios'
+import { useDispatch, useSelector } from 'react-redux'
 
 import Categories from '../../components/Categories/Categories';
 import ProductCard from '../../components/ProductCard/ProductCard';
 import "./Landing.css"
 import Filters from '../../components/Filters/Filters';
+import { getProducts } from '../../actions/productsActions';
 
 const Landing = () => {
     const categories = ['all', 'monitor', 'keyboard', 'mouse', 'headset']
     const [category, setCategory] = useState('all')
-    const [products, setProducts] = useState([])
 
-    const categoryProducts = () => products.filter(product => product.category === category)
+    const dispatch = useDispatch();
+    const { products } = useSelector(state => state);
 
     useEffect(() => {
-        axios.get("http://localhost:3000/products")
-        .then(res => {
-            setProducts(res.data)
-        })
-        .catch(console.error)
+        dispatch(getProducts())
     }, [])
 
     return (
@@ -27,7 +24,7 @@ const Landing = () => {
             <div id="MainInnerContainer">
                 <Filters />
                 <div id="productsContainer">
-                    {category !== 'all' ? categoryProducts().map((product, i) => <ProductCard key={i} product={product}/>) : products.map((product, i) => <ProductCard key={i} product={product}/>)}
+                    {products.map((product, i) => <ProductCard key={i} product={product}/>)}
                 </div>
             </div>
         </div>
