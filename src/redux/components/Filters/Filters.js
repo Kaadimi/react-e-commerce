@@ -1,46 +1,56 @@
-import React from 'react';
-import { useDispatch, useSelector } from 'react-redux'
-import { filterProducts, setSearch } from '../../actions/productsActions';
+import React, { useState } from 'react';
+import { useDispatch } from 'react-redux'
+import { filterProducts, setMaxPrice, setMinPrice, setMinRating, setSearch } from '../../actions/productsActions';
 
 import "./Filters.css"
 
 const Filters = () => {
+    const categories = ['category', 'monitor', 'keyboard', 'mouse', 'headset']
+    const shipping = ['shipping', 'global', 'local']
+    const [filters, setFilters] = useState({search: '', category: 'category', shipping: 'shipping', minPrice: 0, maxPrice: 1000, minRating: 0, maxRating: 5})
     const dispatch = useDispatch();
-    const { filters } = useSelector(state => state);
+
+    const handleChange = (event) => {
+        setFilters(state => ({
+            ...state,
+            [event.target.name]: event.target.value
+        }))
+    }
 
     return (
-        <div id="filtersContainer">
-            <div id="searchContainer">
-                <img src={process.env.PUBLIC_URL + '/loupe.svg'}></img>
-                <input type="text" placeholder="Search..." onChange={e => dispatch(setSearch(e.target.value))}></input>
-            </div>
-            <div id="shippingFilterContainer">
-                <p>shipping</p>
-                <div id="shippingOptions">
-                    <button>
-                        <img src={process.env.PUBLIC_URL + '/plane.svg'}></img>
-                        <span>global</span>
-                    </button>
-                    <button>
-                        <img src={process.env.PUBLIC_URL + '/van.svg'}></img>
-                        <span>local</span>
-                    </button>
+        <form id="filtersContainer">
+            <div className="FiltersRowContainer">
+                <select name="category" onChange={e => handleChange(e)}>
+                    {categories.map((category, i) => <option key={i} value={category}>{category}</option>)}
+                </select>
+                <div id="searchContainer">
+                    <img src={process.env.PUBLIC_URL + '/loupe.svg'}></img>
+                    <input type="text" placeholder="Search..." name="search" onChange={e => handleChange(e)}></input>
                 </div>
             </div>
-            <div>
-                <p>minimum price</p>
-                <input type="range" min="0" max="500" step="10" value="0"></input>
+          
+            <div className="FiltersRowContainer">
+                <select name="shipping" onChange={e => handleChange(e)}>
+                    {shipping.map((method, i) => <option key={i} value={method}>{method}</option>)}
+                </select>
+                <div>
+                    <p>price</p>
+                    <div>
+                        <input name="minPrice" type="number" min="0" max="1000" value={filters.minPrice} onChange={e => handleChange(e)}></input>
+                        <input name="maxPrice" type="number" min="0" max="1000" value={filters.maxPrice} onChange={e =>  handleChange(e)}></input>
+                    </div>
+                </div>
+                <div>
+                    <p>rating</p>
+                    <div>
+                        <input name="minRating" type="number" min="0" max="5" value={filters.minRating} onChange={e =>  handleChange(e)}></input>
+                        <input name="maxRating" type="number" min="0" max="5" value={filters.maxRating} onChange={e =>  handleChange(e)}></input>
+                    </div>
+                </div>
             </div>
-            <div>
-                <p>maximum price</p>
-                <input type="range" min="0" max="500" step="10" value="500"></input>
-            </div>
-            <div>
-                <p>minimum rating</p>
-                <input type="range" min="0" max="5" step="1" value="3"></input>
-            </div>
-            <button onClick={e => dispatch(filterProducts())}>FILTER</button>
-        </div>
+            
+            <button type="submit" id="filtersSubmit" onClick={e => dispatch(filterProducts(filters))}>search</button>
+        </form>
     );
 }
 

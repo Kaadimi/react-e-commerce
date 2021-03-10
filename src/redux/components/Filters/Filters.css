@@ -1,11 +1,37 @@
 #filtersContainer {
     display: flex;
     flex-direction: column;
-    padding: 20px;
-    background: #252525;
+    padding: 20px 20px 40px 20px;
+    margin: 20px auto;
+    max-width: 700px;
+    background: #FFFFFF;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     border-radius: 5px;
-    margin-top: 20px;
-    color: #ffffff;
+    color: #000000;
+    position: relative;
+}
+
+.FiltersRowContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+#filtersSubmit {
+    position: absolute;
+    padding: 10px 60px;
+    background: #4082D5;
+    border-radius: 5px;
+    border: none;
+    bottom: -20px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-style: normal;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 21px;
+    color: #FFFFFF;
 }
 
 #filtersContainer img {
