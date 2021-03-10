@@ -1,6 +1,20 @@
 import axios from 'axios'
 
-import { SET_PRODUCTS, SET_INITIAL_PRODUCTS } from "."
+import { SET_PRODUCTS, SET_PRODUCT, SET_INITIAL_PRODUCTS, ADD_TO_CHART } from "."
+
+export const addToChart = (payload) => {
+    return {
+        type: ADD_TO_CHART,
+        payload
+    }
+}
+
+export const setProduct = (payload) => {
+    return {
+        type: SET_PRODUCT,
+        payload
+    }
+}
 
 export const setProducts = (payload) => {
     return {
@@ -14,6 +28,20 @@ export const setInitialProducts = (payload) => {
         type: SET_INITIAL_PRODUCTS,
         payload
     }
+}
+
+export  const ratingToArray = (number) => {
+    const arr = new Array(5).fill(0)
+
+    for (let i = 0; i < 5; i++)
+    {
+        if (number >= 1)
+            arr[i] = 1;
+        else if (number > 0)
+            arr[i] = 0.5;
+        number--;
+    }
+    return arr;
 }
 
 const filterMachine = (products, filters) => {
@@ -34,6 +62,16 @@ export const filterProducts = (filters) => {
         const { initialProducts } = getState();
         
         dispatch(setProducts(filterMachine(initialProducts, filters)));
+    }
+}
+
+export const getProduct = (category, id) => {
+    return (dispatch) => {
+        axios.get(`http://localhost:3000/products?category=${category}&id=${id}`)
+        .then(res => {
+            dispatch(setProduct(res.data[0]))
+        })
+        .catch(console.error)
     }
 }
 

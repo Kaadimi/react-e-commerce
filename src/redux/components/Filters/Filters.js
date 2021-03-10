@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux'
-import { filterProducts, setMaxPrice, setMinPrice, setMinRating, setSearch } from '../../actions/productsActions';
+import { filterProducts } from '../../actions/productsActions';
 
 import "./Filters.css"
 
@@ -24,7 +24,7 @@ const Filters = () => {
                     {categories.map((category, i) => <option key={i} value={category}>{category}</option>)}
                 </select>
                 <div id="searchContainer">
-                    <img src={process.env.PUBLIC_URL + '/loupe.svg'}></img>
+                    <img alt="searchIcon" src={process.env.PUBLIC_URL + '/loupe.svg'}></img>
                     <input type="text" placeholder="Find your device..." name="search" onChange={e => handleChange(e)}></input>
                 </div>
             </div>

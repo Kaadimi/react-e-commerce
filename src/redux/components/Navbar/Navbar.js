@@ -1,19 +1,24 @@
 import React from 'react';
+import { useSelector } from 'react-redux'
 import { Link } from 'react-router-dom'
 import "./Navbar.css"
 
 const Navbar = () => {
+    const chart = useSelector(state => state.chart)
     //nav element
     return (
         <div id="navbar">
-            <h1>SetupCo</h1>
-            <div>
+             <Link to="/" style={{textDecoration: 'none'}}><h1>SetupCo</h1></Link>
+            <div id="navLinks">
                 <Link to="/cart">
-                    <img src={process.env.PUBLIC_URL + "/like.svg"}></img>
+                    <img alt="likeIcon" src={process.env.PUBLIC_URL + "/like.svg"}></img>
                 </Link>
                 <Link to="/cart">
-                    <img src={process.env.PUBLIC_URL + "/cart.svg"}></img>
+                    <img alt="chartIcon" src={process.env.PUBLIC_URL + "/cart.svg"}></img>
                 </Link>
+                <div>
+                    {chart.length}
+                </div>
             </div>
         </div>
     );

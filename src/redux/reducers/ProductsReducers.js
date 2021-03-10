@@ -1,22 +1,25 @@
-import { SET_PRODUCTS, SET_INITIAL_PRODUCTS } from "../actions";
+import { SET_PRODUCTS, SET_INITIAL_PRODUCTS, SET_PRODUCT, ADD_TO_CHART } from "../actions";
 
 const initialState = {
     initialProducts: [],
     products: [],
-    filters: {
-        search: '',
-        category: 'all',
-        shipping: 'all',
-        minPrice: 0,
-        maxPrice: 1000,
-        minRating: 0,
-        maxRating: 0
-    }
+    product: null,
+    chart: []
 }
 
 const ProductsReducers = (state = initialState, action) => {
     switch (action.type)
     {
+        case ADD_TO_CHART:
+            return {
+                ...state,
+                chart: [...state.chart, action.payload]
+            }
+        case SET_PRODUCT:
+            return {
+                ...state,
+                product: action.payload
+            }
         case SET_INITIAL_PRODUCTS:
             return {
                 ...state,

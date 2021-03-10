@@ -12,7 +12,7 @@
                 
             },
             {
-                "id": 1,
+                "id": 2,
                 "category": "monitor",
                 "shipping": "global",
                 "title": "Sceptre IPS 24",
@@ -23,7 +23,7 @@
                 
             },
             {
-                "id": 1,
+                "id": 3,
                 "category": "monitor",
                 "shipping": "global",
                 "title": "Sceptre IPS 24",
@@ -34,7 +34,7 @@
                 
             },
             {
-                "id": 1,
+                "id": 4,
                 "category": "monitor",
                 "shipping": "global",
                 "title": "Sceptre IPS 24",
@@ -45,7 +45,7 @@
                 
             },
             {
-                "id": 1,
+                "id": 5,
                 "category": "monitor",
                 "shipping": "global",
                 "title": "Sceptre IPS 24",
@@ -66,7 +66,7 @@
                 "info": "Connectivity Technology USB Type - C\nBrand Razer\nKeyboard Description QWERTY"
             },
             {
-                "id": 1,
+                "id": 2,
                 "category": "keyboard",
                 "shipping": "global",
                 "title": "Razer Huntsman Tournament Edition",
@@ -75,7 +75,7 @@
                 "description": "The #1 Best-Selling Gaming Peripherals Manufacturer in the US: Source - The NPD Group, Inc. U.S. Retail Tracking Service, Keyboards, Mice, PC Headset/Pc Microphone, Gaming Designed, based on dollar sales, 2017-2021\nFaster Than Traditional Mechanical Switches: Razer Linear Optical switch technology uses optical beam-based actuation, registering key presses at the speed of light (15-30% shorter actuation distance than other linear switches at 1.0 millimeter.\nUltimate Personalization & Gaming Immersion with Razer Chroma: Fully syncs with popular games, Razer hardware, Philips Hue, and gear from 30+ partners; supports 16.8 million colors on individually backlit keys\nQuality, Aluminum Construction: Covered with a matte, aluminum top frame for increased structural integrity\nTournament-Ready Design: A tenkeyless design with a detachable USB-C cable provides a portable form-factor for on-the-go gamers\nOil-Resistant Doubleshot PBT Keycaps: Made of textured, high-grade PBT for a more durable and textured finish less prone to long-term grime buildup\nFully Programmable Macros: Razer Hypershift allows for all keys and keypress combinations to be remapped to execute complex commands",
                 "info": "Connectivity Technology USB Type - C\nBrand Razer\nKeyboard Description QWERTY"
             }, {
-                "id": 1,
+                "id": 3,
                 "category": "keyboard",
                 "shipping": "global",
                 "title": "Razer Huntsman Tournament Edition",
@@ -84,7 +84,7 @@
                 "description": "The #1 Best-Selling Gaming Peripherals Manufacturer in the US: Source - The NPD Group, Inc. U.S. Retail Tracking Service, Keyboards, Mice, PC Headset/Pc Microphone, Gaming Designed, based on dollar sales, 2017-2021\nFaster Than Traditional Mechanical Switches: Razer Linear Optical switch technology uses optical beam-based actuation, registering key presses at the speed of light (15-30% shorter actuation distance than other linear switches at 1.0 millimeter.\nUltimate Personalization & Gaming Immersion with Razer Chroma: Fully syncs with popular games, Razer hardware, Philips Hue, and gear from 30+ partners; supports 16.8 million colors on individually backlit keys\nQuality, Aluminum Construction: Covered with a matte, aluminum top frame for increased structural integrity\nTournament-Ready Design: A tenkeyless design with a detachable USB-C cable provides a portable form-factor for on-the-go gamers\nOil-Resistant Doubleshot PBT Keycaps: Made of textured, high-grade PBT for a more durable and textured finish less prone to long-term grime buildup\nFully Programmable Macros: Razer Hypershift allows for all keys and keypress combinations to be remapped to execute complex commands",
                 "info": "Connectivity Technology USB Type - C\nBrand Razer\nKeyboard Description QWERTY"
             }, {
-                "id": 1,
+                "id": 4,
                 "category": "keyboard",
                 "shipping": "global",
                 "title": "Razer Huntsman Tournament Edition",
@@ -93,7 +93,7 @@
                 "description": "The #1 Best-Selling Gaming Peripherals Manufacturer in the US: Source - The NPD Group, Inc. U.S. Retail Tracking Service, Keyboards, Mice, PC Headset/Pc Microphone, Gaming Designed, based on dollar sales, 2017-2021\nFaster Than Traditional Mechanical Switches: Razer Linear Optical switch technology uses optical beam-based actuation, registering key presses at the speed of light (15-30% shorter actuation distance than other linear switches at 1.0 millimeter.\nUltimate Personalization & Gaming Immersion with Razer Chroma: Fully syncs with popular games, Razer hardware, Philips Hue, and gear from 30+ partners; supports 16.8 million colors on individually backlit keys\nQuality, Aluminum Construction: Covered with a matte, aluminum top frame for increased structural integrity\nTournament-Ready Design: A tenkeyless design with a detachable USB-C cable provides a portable form-factor for on-the-go gamers\nOil-Resistant Doubleshot PBT Keycaps: Made of textured, high-grade PBT for a more durable and textured finish less prone to long-term grime buildup\nFully Programmable Macros: Razer Hypershift allows for all keys and keypress combinations to be remapped to execute complex commands",
                 "info": "Connectivity Technology USB Type - C\nBrand Razer\nKeyboard Description QWERTY"
             }, {
-                "id": 1,
+                "id": 5,
                 "category": "keyboard",
                 "shipping": "global",
                 "title": "Razer Huntsman Tournament Edition",
@@ -113,7 +113,7 @@
                 "info": "Connectivity Technology USB\nMovement Detection Technology Optical\nBrand Razer\nHand Orientation Right\nHardware Platform PC"
             },
             {
-                "id": 1,
+                "id": 2,
                 "category": "mouse",
                 "shipping": "global",
                 "title": "Razer Basilisk v2",
@@ -123,7 +123,7 @@
                 "info": "Connectivity Technology USB\nMovement Detection Technology Optical\nBrand Razer\nHand Orientation Right\nHardware Platform PC"
             },
             {
-                "id": 1,
+                "id": 3,
                 "category": "mouse",
                 "shipping": "global",
                 "title": "Razer Basilisk v2",
@@ -133,7 +133,7 @@
                 "info": "Connectivity Technology USB\nMovement Detection Technology Optical\nBrand Razer\nHand Orientation Right\nHardware Platform PC"
             },
             {
-                "id": 1,
+                "id": 4,
                 "category": "mouse",
                 "shipping": "global",
                 "title": "Razer Basilisk v2",
@@ -143,7 +143,7 @@
                 "info": "Connectivity Technology USB\nMovement Detection Technology Optical\nBrand Razer\nHand Orientation Right\nHardware Platform PC"
             },
             {
-                "id": 1,
+                "id": 5,
                 "category": "mouse",
                 "shipping": "global",
                 "title": "Razer Basilisk v2",
@@ -163,7 +163,7 @@
                 "info": "Brand Corsair\nColor Carbon\nConnectivity Technology Wired\nModel Name HS60 PRO Surround Carbon\nForm Factor On Ear"
             },
             {
-                "id": 1,
+                "id": 2,
                 "category": "headset",
                 "shipping": "global",
                 "title": "Corsair HS60 PRO",
@@ -173,7 +173,7 @@
                 "info": "Brand Corsair\nColor Carbon\nConnectivity Technology Wired\nModel Name HS60 PRO Surround Carbon\nForm Factor On Ear"
             },
             {
-                "id": 1,
+                "id": 3,
                 "category": "headset",
                 "shipping": "global",
                 "title": "Corsair HS60 PRO",
@@ -183,7 +183,7 @@
                 "info": "Brand Corsair\nColor Carbon\nConnectivity Technology Wired\nModel Name HS60 PRO Surround Carbon\nForm Factor On Ear"
             },
             {
-                "id": 1,
+                "id": 4,
                 "category": "headset",
                 "shipping": "global",
                 "title": "Corsair HS60 PRO",
@@ -193,7 +193,7 @@
                 "info": "Brand Corsair\nColor Carbon\nConnectivity Technology Wired\nModel Name HS60 PRO Surround Carbon\nForm Factor On Ear"
             },
             {
-                "id": 1,
+                "id": 5,
                 "category": "headset",
                 "shipping": "global",
                 "title": "Corsair HS60 PRO",

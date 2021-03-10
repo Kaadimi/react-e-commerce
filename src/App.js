@@ -15,7 +15,7 @@ function App() {
         <Navbar />
         <Switch>
           <Route exact path="/" component={Landing}/>
-          <Route path="/product/:id" component={Product}/>
+          <Route path="/product/:category/:id" component={Product}/>
           <Route exact path="/cart" component={Cart}/>
         </Switch>
       </Router>
