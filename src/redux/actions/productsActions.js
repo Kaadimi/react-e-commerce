@@ -19,12 +19,14 @@ export const setInitialProducts = (payload) => {
 const filterMachine = (products, filters) => {
     const regex = new RegExp(filters.search, "i");
 
-    if (filters.category === 'category')
-        return products.filter(product => regex.test(product.title) && product.shipping === filters.shipping && product.price >= filters.minPrice && product.price <= filters.maxPrice && product.rating >= filters.minRating && product.rating <= filters.maxRating);
-    else if (filters.shipping === 'shipping')
-        return products.filter(product => regex.test(product.title) && product.category === filters.category && product.price >= filters.minPrice && product.price <= filters.maxPrice && product.rating >= filters.minRating && product.rating <= filters.maxRating);
+    if (filters.category === 'category' && filters.shipping === 'shipping')
+        return products.filter(product => regex.test(product.title) && product.price >= filters.price && product.rating >= filters.rating);
+    if (filters.category === 'category' && filters.shipping !== 'shipping')
+        return products.filter(product => regex.test(product.title) && product.shipping === filters.shipping && product.price >= filters.price && product.rating >= filters.rating);
+    else if (filters.shipping === 'shipping' && filters.category !== 'category')
+        return products.filter(product => regex.test(product.title) && product.category === filters.category && product.price >= filters.price && product.rating >= filters.rating);
     else
-        return products.filter(product => regex.test(product.title) && product.category === filters.category && product.shipping === filters.shipping && product.price >= filters.minPrice && product.price <= filters.maxPrice && product.rating >= filters.minRating && product.rating <= filters.maxRating);
+    return products.filter(product => regex.test(product.title) && product.category === filters.category && product.shipping === filters.shipping && product.price >= filters.price && product.rating >= filters.rating);
 }
 
 export const filterProducts = (filters) => {
