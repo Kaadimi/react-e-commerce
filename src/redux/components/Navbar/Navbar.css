@@ -37,3 +37,8 @@
 #productPagePrice span {
     font-weight: 600;
 }
+
+#cartSize {
+    color: #243bff;
+    font-weight: 600;
+}

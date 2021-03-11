@@ -1,6 +1,6 @@
 import axios from 'axios'
 
-import { SET_PRODUCTS, SET_PRODUCT, SET_INITIAL_PRODUCTS, ADD_TO_CHART, SET_LOADING } from "."
+import { SET_PRODUCTS, SET_PRODUCT, SET_INITIAL_PRODUCTS, SET_CHART, SET_LOADING } from "."
 
 export const setLoading = (payload) => {
     return {
@@ -9,9 +9,9 @@ export const setLoading = (payload) => {
     }
 }
 
-export const addToChart = (payload) => {
+export const setCart = (payload) => {
     return {
-        type: ADD_TO_CHART,
+        type: SET_CHART,
         payload
     }
 }
@@ -62,6 +62,25 @@ const filterMachine = (products, filters) => {
         return products.filter(product => regex.test(product.title) && product.category === filters.category && product.price >= filters.price && product.rating >= filters.rating);
     else
         return products.filter(product => regex.test(product.title) && product.category === filters.category && product.shipping === filters.shipping && product.price >= filters.price && product.rating >= filters.rating);
+}
+
+export const addToCart = ({product, quantity}) => (dispatch, getState) => {
+    const { cart } = getState();
+    const newCart = [];
+    const len = cart.length;
+
+    if (!cart.some(item => item.product.category === product.category && item.product.id === product.id))
+        dispatch(setCart([...cart, {product, quantity}]))
+    else {
+        for (let i = 0; i < len; i++)
+        {
+            if (cart[i].product.category === product.category && cart[i].product.id === product.id)
+                newCart.push({product: cart[i].product, quantity: cart[i].quantity + quantity})
+            else
+                newCart.push(cart[i])
+        }
+        dispatch(setCart(newCart))
+    }
 }
 
 export const filterProducts = (filters) => {

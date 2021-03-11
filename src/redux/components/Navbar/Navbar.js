@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom'
 import "./Navbar.css"
 
 const Navbar = () => {
-    const chart = useSelector(state => state.chart)
+    const { cart } = useSelector(state => state)
     //nav element
     return (
         <div id="navbar">
@@ -16,8 +16,8 @@ const Navbar = () => {
                 <Link to="/cart">
                     <img alt="chartIcon" src={process.env.PUBLIC_URL + "/cart.svg"}></img>
                 </Link>
-                <div>
-                    {chart.length}
+                <div id="cartSize">
+                    {cart.length > 0 && cart.length}
                 </div>
             </div>
         </div>

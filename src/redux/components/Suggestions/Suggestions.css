@@ -1,9 +1,11 @@
 #suggestionsBar {
-    width: 90%;
+    max-width: 1100px;
+    min-width: 950px;
+    min-height: 100px;
     overflow-x: auto;
     overflow-y: hidden;
     height: auto;
-    margin: auto;
+    margin: 10px auto;
     background: #F4F6F7;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     display: flex;

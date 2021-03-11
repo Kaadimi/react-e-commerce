@@ -1,0 +1,71 @@
+#dialogContainer {
+    position: fixed;
+    top: 0;bottom: 0;left: 0;right: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 2;
+    background: rgba(0, 0, 0, 0.25);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#purchaseConfirmationContainer {
+    background: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 5px;
+}
+
+#confirmationHeader {
+    background: #1747b3;
+    padding: 10px 0;
+    border-top-right-radius: 5px;
+    border-top-left-radius: 5px;
+    color: #fff;
+    width: 100%;
+    text-transform: uppercase;
+}
+
+#confirmationInfo {
+    margin: 10px;
+}
+
+#confirmationInfo p{
+    font-size: 17px;
+    font-weight: 600;
+}
+
+#confirmationInfo img{
+    max-width: 250px;
+    max-height: 200px;
+}
+
+#confirmationActions {
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+#confirmationActions button {
+    flex-grow: 1;
+    padding: 5px 10px;
+    border: none;
+    border-radius: 3px;
+    margin: 5px;
+    color: #fff;
+    text-transform: uppercase;
+    font-size: 15px;
+    font-weight: 600;
+}
+
+#confirmPurchase {
+    background: #1747b3;
+}
+
+#cancelPurchase {
+    background: #D54040;
+}

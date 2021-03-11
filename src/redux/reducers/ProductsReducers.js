@@ -1,11 +1,11 @@
-import { SET_PRODUCTS, SET_INITIAL_PRODUCTS, SET_PRODUCT, ADD_TO_CHART, SET_LOADING } from "../actions";
+import { SET_PRODUCTS, SET_INITIAL_PRODUCTS, SET_PRODUCT, SET_CHART, SET_LOADING } from "../actions";
 
 const initialState = {
     initialProducts: [],
     products: [],
     product: null,
     loading: true,
-    chart: []
+    cart: []
 }
 
 const ProductsReducers = (state = initialState, {type, payload}) => {
@@ -16,10 +16,10 @@ const ProductsReducers = (state = initialState, {type, payload}) => {
                 ...state,
                 loading: payload
             }
-        case ADD_TO_CHART:
+        case SET_CHART:
             return {
                 ...state,
-                chart: [...state.chart, payload]
+                cart: payload
             }
         case SET_PRODUCT:
             return {
