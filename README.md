@@ -1,3 +1,9 @@
+# THE APP USES JSON SERVEUR TO HOST PRODUCTS DATA
+
+From the home directory use the command: json-server --watch .\public\products.json
+
+After that use npm start and choose another port. other than :3000
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).

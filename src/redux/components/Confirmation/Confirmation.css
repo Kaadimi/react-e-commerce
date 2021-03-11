@@ -17,6 +17,7 @@
     justify-content: space-between;
     align-items: center;
     border-radius: 5px;
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
 }
 
 #confirmationHeader {
@@ -27,6 +28,10 @@
     color: #fff;
     width: 100%;
     text-transform: uppercase;
+}
+
+#conformationBody {
+    display: flex;
 }
 
 #confirmationInfo {
@@ -46,12 +51,13 @@
 #confirmationActions {
     width: 100%;
     display: flex;
+    flex-direction: column;
     justify-content: space-evenly;
     align-items: center;
+    margin-bottom: 20px;
 }
 
 #confirmationActions button {
-    flex-grow: 1;
     padding: 5px 10px;
     border: none;
     border-radius: 3px;
@@ -59,7 +65,8 @@
     color: #fff;
     text-transform: uppercase;
     font-size: 15px;
-    font-weight: 600;
+    font-weight: 500;
+    width: 90%;
 }
 
 #confirmPurchase {
@@ -67,5 +74,21 @@
 }
 
 #cancelPurchase {
-    background: #D54040;
+    background: transparent;
+    color: #f00 !important;
+    border: thin solid rgb(197, 197, 197) !important;
+}
+
+#confirmationRightSide {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 0 20px;
+}
+
+#confirmationRightSide p {
+    font-weight: 600;
+    font-size: 18px;
+    text-transform: capitalize;
 }

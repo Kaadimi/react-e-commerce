@@ -4,7 +4,7 @@
     height: 300px;
     display: flex;
     flex-direction: column;
-    justify-content: space-evenly;
+    justify-content: space-around;
     align-items: center;
     background: #FFFFFF;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
@@ -42,16 +42,16 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-bottom: 0px;
+    /* margin-bottom: 10px; */
 }
 
 #productCardInfo h5 {
     font-style: normal;
     font-weight: 600;
-    font-size: 18px;
+    font-size: 16px;
     line-height: 21px;
     color: #000000;
-    margin-bottom: 10px;
+    margin: 0;
 }
 
 #productCardInfo p {
@@ -61,7 +61,7 @@
     font-size: 18px;
     line-height: 21px;
     color: #000000;
-    margin-bottom: 10px;
+    margin: 0;
 }
 
 

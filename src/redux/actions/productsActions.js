@@ -83,6 +83,12 @@ export const addToCart = ({product, quantity}) => (dispatch, getState) => {
     }
 }
 
+export const removeFromCart = (product) => (dispatch, getState) => {
+    const { cart } = getState();
+
+    dispatch(setCart(cart.filter(item => item.product.category !== product.category || item.product.id !== product.id)))
+}
+
 export const filterProducts = (filters) => {
     return (dispatch, getState) => {
         const { initialProducts } = getState();

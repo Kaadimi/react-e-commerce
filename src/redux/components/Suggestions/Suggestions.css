@@ -17,6 +17,7 @@
 .suggestionContainer {
     background: #FFFFFF;
     border-radius: 5px;
+    padding: 5px;
     display: flex;
     justify-content: flex-start;
     align-items: flex-start;
