@@ -7,6 +7,7 @@ import Landing from './redux/containers/Landing/Landing'
 import Product from './redux/containers/Product/Product';
 import Cart from './redux/containers/Cart/Cart';
 import Navbar from './redux/components/Navbar/Navbar';
+import PageNotFound from './redux/components/PageNotFound/PageNotFound'
 
 function App() {
   return (
@@ -15,8 +16,9 @@ function App() {
         <Navbar />
         <Switch>
           <Route exact path="/" component={Landing}/>
-          <Route path="/product/:category/:id" component={Product}/>
+          <Route exact path="/product/:category/:id" component={Product}/>
           <Route exact path="/cart" component={Cart}/>
+          <Route component={PageNotFound}/>
         </Switch>
       </Router>
     </Provider>

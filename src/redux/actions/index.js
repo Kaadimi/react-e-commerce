@@ -3,3 +3,4 @@ export const SET_PRODUCT = 'SET_PRODUCT';
 export const SET_INITIAL_PRODUCTS = 'SET_INITIAL_PRODUCTS';
 export const GET_PRODUCTS = 'GET_PRODUCTS';
 export const ADD_TO_CHART = 'ADD_TO_CHART';
+export const SET_LOADING = 'SET_LOADING'

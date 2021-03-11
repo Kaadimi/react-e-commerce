@@ -1,35 +1,41 @@
-import { SET_PRODUCTS, SET_INITIAL_PRODUCTS, SET_PRODUCT, ADD_TO_CHART } from "../actions";
+import { SET_PRODUCTS, SET_INITIAL_PRODUCTS, SET_PRODUCT, ADD_TO_CHART, SET_LOADING } from "../actions";
 
 const initialState = {
     initialProducts: [],
     products: [],
     product: null,
+    loading: true,
     chart: []
 }
 
-const ProductsReducers = (state = initialState, action) => {
-    switch (action.type)
+const ProductsReducers = (state = initialState, {type, payload}) => {
+    switch (type)
     {
+        case SET_LOADING:
+            return {
+                ...state,
+                loading: payload
+            }
         case ADD_TO_CHART:
             return {
                 ...state,
-                chart: [...state.chart, action.payload]
+                chart: [...state.chart, payload]
             }
         case SET_PRODUCT:
             return {
                 ...state,
-                product: action.payload
+                product: payload
             }
         case SET_INITIAL_PRODUCTS:
             return {
                 ...state,
-                initialProducts: action.payload,
-                products: action.payload
+                initialProducts: payload,
+                products: payload
             }
         case SET_PRODUCTS:
             return {
                 ...state,
-                products: action.payload
+                products: payload
             }
         default:
             return state;

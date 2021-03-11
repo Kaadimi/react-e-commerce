@@ -1,6 +1,13 @@
 import axios from 'axios'
 
-import { SET_PRODUCTS, SET_PRODUCT, SET_INITIAL_PRODUCTS, ADD_TO_CHART } from "."
+import { SET_PRODUCTS, SET_PRODUCT, SET_INITIAL_PRODUCTS, ADD_TO_CHART, SET_LOADING } from "."
+
+export const setLoading = (payload) => {
+    return {
+        type: SET_LOADING,
+        payload
+    }
+}
 
 export const addToChart = (payload) => {
     return {
@@ -54,7 +61,7 @@ const filterMachine = (products, filters) => {
     else if (filters.shipping === 'shipping' && filters.category !== 'category')
         return products.filter(product => regex.test(product.title) && product.category === filters.category && product.price >= filters.price && product.rating >= filters.rating);
     else
-    return products.filter(product => regex.test(product.title) && product.category === filters.category && product.shipping === filters.shipping && product.price >= filters.price && product.rating >= filters.rating);
+        return products.filter(product => regex.test(product.title) && product.category === filters.category && product.shipping === filters.shipping && product.price >= filters.price && product.rating >= filters.rating);
 }
 
 export const filterProducts = (filters) => {
@@ -67,20 +74,33 @@ export const filterProducts = (filters) => {
 
 export const getProduct = (category, id) => {
     return (dispatch) => {
+        dispatch(setLoading(true));
+
         axios.get(`http://localhost:3000/products?category=${category}&id=${id}`)
         .then(res => {
-            dispatch(setProduct(res.data[0]))
+            dispatch(setLoading(false));
+            dispatch(setProduct(res.data[0]));
+            dispatch(getProducts());
         })
-        .catch(console.error)
+        .catch(err => {
+            console.log(err)
+            dispatch(setLoading(false));
+        })
     }
 }
 
 export const getProducts = () => {
     return (dispatch) => {
+        dispatch(setLoading(true));
+
         axios.get("http://localhost:3000/products")
         .then(res => {
-            dispatch(setInitialProducts(res.data))
+            dispatch(setLoading(false));
+            dispatch(setInitialProducts(res.data));
         })
-        .catch(console.error)
+        .catch(err => {
+            console.log(err);
+            dispatch(setLoading(false));
+        })
     }
 }

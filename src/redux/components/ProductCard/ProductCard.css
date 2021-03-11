@@ -15,7 +15,7 @@
 #productCardImages {
     width: 100%;
     display: flex;
-    justify-content: space-evenly;
+    justify-content: space-around;
     align-items: flex-start;
     margin-top: 20px;
 }
@@ -32,8 +32,9 @@
 }
 
 #productCardRating img{
-    width: 26px;
-    height: 26px;
+     width: 24px;
+    height: 24px;
+    filter: invert(49%) sepia(45%) saturate(850%) hue-rotate(175deg) brightness(89%) contrast(86%);
 }
 
 #productCardInfo {
