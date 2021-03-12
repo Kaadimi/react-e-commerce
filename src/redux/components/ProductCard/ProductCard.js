@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom'
 
-import { ratingToArray } from '../../actions/productsActions'
+import { ratingToArray } from '../../actions/ProductsActions'
 import "./ProductCard.css"
 
 const ProductCard = ({product}) => {

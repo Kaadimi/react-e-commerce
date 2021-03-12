@@ -21,7 +21,7 @@ const CartBody = ({ cart }) => {
                     <span>continue shopping</span>
                 </Link>
                 <div id="cartCheckout">
-                    <p>total: <span>{cart.length > 0 ? cart.reduce((total, item) => total + (item.product.price * item.quantity), 0) : 0} $</span></p>
+                    <p>total: <span>{cart.length > 0 ? cart.reduce((total, item) => total + (item.product.price * item.quantity), 0).toFixed(2) : 0} $</span></p>
                     <button>checkout</button>
                 </div>
             </div>

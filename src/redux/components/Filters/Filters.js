@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux'
-import { filterProducts } from '../../actions/productsActions';
+import { filterProducts } from '../../actions/LandingActions';
 
 import "./Filters.css"
 

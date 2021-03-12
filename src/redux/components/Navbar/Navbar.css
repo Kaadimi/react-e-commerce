@@ -39,6 +39,12 @@
 }
 
 #cartSize {
-    color: #243bff;
-    font-weight: 600;
+    width: 20px;
+    background: #4082d5;
+    color: #ffffff;
+    height: 20px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }

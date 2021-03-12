@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 
-import { getProduct } from '../../actions/productsActions';
+import { getProduct } from '../../actions/ProductsActions';
 import PageNotFound from '../../components/PageNotFound/PageNotFound';
 import ProductInfo from '../../components/ProductInfo/ProductInfo';
 import Suggestions from '../../components/Suggestions/Suggestions'
@@ -10,7 +10,7 @@ import './Product.css'
 
 const Product = (props) => {
     const dispatch = useDispatch();
-    const { loading, product, products } = useSelector(state => state);
+    const { loading, product, suggestions } = useSelector(state => state);
 
 
     useEffect(() => {
@@ -21,13 +21,13 @@ const Product = (props) => {
 
     return (
         <div>
-            {!loading ?
-            <div>
-                {product && products.length ? 
-                <div  id="productPageContainer">
-                    <ProductInfo product={product}/>
-                    <Suggestions suggestions={products.filter(suggestion => suggestion.category === product.category)}/>
-                </div> : <PageNotFound />}
+            {!loading ? <div>
+            {product ?  
+            <div  id="productPageContainer">
+                <ProductInfo product={product}/>
+                {suggestions && <Suggestions suggestions={suggestions}/>}
+            </div>
+            : <PageNotFound />}
             </div> : null} 
         </div>
     );

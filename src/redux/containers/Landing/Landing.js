@@ -4,7 +4,7 @@ import { useDispatch, useSelector } from 'react-redux'
 import ProductCard from '../../components/ProductCard/ProductCard';
 import "./Landing.css"
 import Filters from '../../components/Filters/Filters';
-import { getProducts } from '../../actions/productsActions';
+import { getProducts } from '../../actions/LandingActions';
 
 const Landing = () => {
     const dispatch = useDispatch();

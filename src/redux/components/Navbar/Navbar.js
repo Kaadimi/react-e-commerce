@@ -16,9 +16,9 @@ const Navbar = () => {
                 <Link to="/cart">
                     <img alt="chartIcon" src={process.env.PUBLIC_URL + "/cart.svg"}></img>
                 </Link>
-                <div id="cartSize">
-                    {cart.length > 0 && cart.length}
-                </div>
+                {cart.length > 0 && <div id="cartSize">
+                     {cart.length}
+                </div>}
             </div>
         </div>
     );

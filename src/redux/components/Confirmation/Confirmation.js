@@ -1,6 +1,6 @@
 import React from 'react';
 import { useDispatch } from 'react-redux';
-import { addToCart } from '../../actions/productsActions';
+import { addToCart } from '../../actions/CartActions';
 
 import "./Confirmation.css"
 

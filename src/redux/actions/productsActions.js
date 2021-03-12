@@ -1,17 +1,10 @@
 import axios from 'axios'
 
-import { SET_PRODUCTS, SET_PRODUCT, SET_INITIAL_PRODUCTS, SET_CHART, SET_LOADING } from "."
+import { SET_PRODUCT, SET_LOADING, SET_SUGGESTIONS } from "."
 
 export const setLoading = (payload) => {
     return {
         type: SET_LOADING,
-        payload
-    }
-}
-
-export const setCart = (payload) => {
-    return {
-        type: SET_CHART,
         payload
     }
 }
@@ -23,16 +16,9 @@ export const setProduct = (payload) => {
     }
 }
 
-export const setProducts = (payload) => {
+export const setSuggestions = (payload) => {
     return {
-        type: SET_PRODUCTS,
-        payload
-    }
-}
-
-export const setInitialProducts = (payload) => {
-    return {
-        type: SET_INITIAL_PRODUCTS,
+        type: SET_SUGGESTIONS,
         payload
     }
 }
@@ -51,50 +37,12 @@ export  const ratingToArray = (number) => {
     return arr;
 }
 
-const filterMachine = (products, filters) => {
-    const regex = new RegExp(filters.search, "i");
-
-    if (filters.category === 'category' && filters.shipping === 'shipping')
-        return products.filter(product => regex.test(product.title) && product.price >= filters.price && product.rating >= filters.rating);
-    if (filters.category === 'category' && filters.shipping !== 'shipping')
-        return products.filter(product => regex.test(product.title) && product.shipping === filters.shipping && product.price >= filters.price && product.rating >= filters.rating);
-    else if (filters.shipping === 'shipping' && filters.category !== 'category')
-        return products.filter(product => regex.test(product.title) && product.category === filters.category && product.price >= filters.price && product.rating >= filters.rating);
-    else
-        return products.filter(product => regex.test(product.title) && product.category === filters.category && product.shipping === filters.shipping && product.price >= filters.price && product.rating >= filters.rating);
-}
-
-export const addToCart = ({product, quantity}) => (dispatch, getState) => {
-    const { cart } = getState();
-    const newCart = [];
-    const len = cart.length;
-
-    if (!cart.some(item => item.product.category === product.category && item.product.id === product.id))
-        dispatch(setCart([...cart, {product, quantity}]))
-    else {
-        for (let i = 0; i < len; i++)
-        {
-            if (cart[i].product.category === product.category && cart[i].product.id === product.id)
-                newCart.push({product: cart[i].product, quantity: cart[i].quantity + quantity})
-            else
-                newCart.push(cart[i])
-        }
-        dispatch(setCart(newCart))
-    }
-}
-
-export const removeFromCart = (product) => (dispatch, getState) => {
-    const { cart } = getState();
-
-    dispatch(setCart(cart.filter(item => item.product.category !== product.category || item.product.id !== product.id)))
-}
-
-export const filterProducts = (filters) => {
-    return (dispatch, getState) => {
-        const { initialProducts } = getState();
-        
-        dispatch(setProducts(filterMachine(initialProducts, filters)));
-    }
+export const getSuggestions = (category) => () => {
+    return new Promise((resolve, reject) => {
+        axios.get(`http://localhost:3000/products?category=${category}&_limit=3`)
+        .then(resolve)
+        .catch(reject);
+    }) 
 }
 
 export const getProduct = (category, id) => {
@@ -102,29 +50,16 @@ export const getProduct = (category, id) => {
         dispatch(setLoading(true));
 
         axios.get(`http://localhost:3000/products?category=${category}&id=${id}`)
-        .then(res => {
-            dispatch(setLoading(false));
-            dispatch(setProduct(res.data[0]));
-            dispatch(getProducts());
+        .then(product => {
+            dispatch(setProduct(product.data[0]));
+            dispatch(getSuggestions(category))
+            .then(suggestion => {
+                dispatch(setLoading(false));
+                dispatch(setSuggestions(suggestion.data))
+            })
         })
         .catch(err => {
             console.log(err)
-            dispatch(setLoading(false));
-        })
-    }
-}
-
-export const getProducts = () => {
-    return (dispatch) => {
-        dispatch(setLoading(true));
-
-        axios.get("http://localhost:3000/products")
-        .then(res => {
-            dispatch(setLoading(false));
-            dispatch(setInitialProducts(res.data));
-        })
-        .catch(err => {
-            console.log(err);
             dispatch(setLoading(false));
         })
     }

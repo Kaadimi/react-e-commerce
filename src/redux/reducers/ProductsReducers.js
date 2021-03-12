@@ -1,16 +1,22 @@
-import { SET_PRODUCTS, SET_INITIAL_PRODUCTS, SET_PRODUCT, SET_CHART, SET_LOADING } from "../actions";
+import { SET_PRODUCTS, SET_INITIAL_PRODUCTS, SET_PRODUCT, SET_CHART, SET_LOADING, SET_SUGGESTIONS } from "../actions";
 
 const initialState = {
+    loading: true,
     initialProducts: [],
     products: [],
     product: null,
-    loading: true,
+    suggestions: [],
     cart: []
 }
 
 const ProductsReducers = (state = initialState, {type, payload}) => {
     switch (type)
     {
+        case SET_SUGGESTIONS:
+            return {
+                ...state,
+                suggestions: payload
+            }
         case SET_LOADING:
             return {
                 ...state,

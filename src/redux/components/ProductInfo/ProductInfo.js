@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
 
-import { ratingToArray } from '../../actions/productsActions';
+import { ratingToArray } from '../../actions/ProductsActions';
 import Confirmation from '../../components/Confirmation/Confirmation';
 
 import "./ProductInfo.css"

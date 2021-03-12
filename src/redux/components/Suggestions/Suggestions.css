@@ -55,6 +55,10 @@
     margin: 0 0 5px 0;
 }
 
+.suggestionInfoContainer p {
+    margin: 10px 0 5px 0;
+}
+
 .suggestionInfoContainer span {
     font-weight: 600;
 }
