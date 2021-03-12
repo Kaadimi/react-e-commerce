@@ -7,6 +7,19 @@ export const setCart = (payload) => {
     }
 }
 
+export const cartQuantityChange = ({product, quantity}) => (dispatch, getState) => {
+    const { cart } = getState();
+   
+    if (quantity < 1)
+        return ;
+    dispatch(setCart(cart.map(item => {
+        if (item.product.category === product.category && item.product.id === product.id)
+            return {product, quantity}
+        else
+            return item;
+    })));
+}
+
 export const addToCart = ({product, quantity}) => (dispatch, getState) => {
     const { cart } = getState();
     const newCart = [];

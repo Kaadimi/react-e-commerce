@@ -19,7 +19,6 @@ export const setProducts = (payload) => {
 export const sortProducts = (sort) => (dispatch, getState) => {
     const { products } = getState();
 
-    console.log(sort)
     if (sort === "increasing price")
         dispatch(setProducts(products.sort((a, b) => a.price - b.price)))
     else if (sort === "decreasing price")

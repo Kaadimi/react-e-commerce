@@ -1,6 +1,6 @@
 import React from 'react';
 import { useDispatch } from 'react-redux'
-import { addToCart, removeFromCart } from '../../actions/CartActions';
+import { cartQuantityChange, removeFromCart } from '../../actions/CartActions';
 
 import "./CartItem.css"
 
@@ -14,7 +14,7 @@ const CartItem = ({ item }) => {
                 <p>{item.product.title}</p>
             </div>
             <div className="cartItemDiv">
-                <input type="number" min="1" value={item.quantity} onChange={(e) => dispatch(addToCart({product: item.product, quantity: e.target.value > 0 ? item.quantity < e.target.value ? 1 : -1 : 1}))}></input>
+                <input type="number" min="1" value={item.quantity} onChange={(e) => dispatch(cartQuantityChange({product: item.product, quantity: e.target.value}))}></input>
             </div>
             <div className="cartItemDiv">
                 <p>{(item.product.price * item.quantity).toFixed(2)} <span>$</span></p>

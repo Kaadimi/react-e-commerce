@@ -33,7 +33,6 @@ export const daysDifference = (date) => {
     const difference = Date.now() - date;
     const days = Math.floor(difference/1000/60/60/24);
 
-    console.log(difference)
     return days === 1 ? "1 day ago" : `${days} days ago`
 }
 
