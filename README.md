@@ -2,7 +2,7 @@
 
 From the home directory use the command: json-server --watch .\public\products.json
 
-After that use npm start and choose another port. other than :3000
+After that use npm start
 
 # Getting Started with Create React App
 
