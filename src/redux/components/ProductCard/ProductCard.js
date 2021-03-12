@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom'
 
-import { ratingToArray } from '../../actions/ProductsActions'
+import { daysDifference, ratingToArray } from '../../actions/ProductsActions'
 import "./ProductCard.css"
 
 const ProductCard = ({product}) => {
@@ -10,6 +10,9 @@ const ProductCard = ({product}) => {
     return (
         <Link style={{textDecoration: 'none'}} to={`product/${category}/${id}`}>
             <div className="productCard">
+                <div id="timeContainer">
+                    <span>{daysDifference(product.date)}</span>
+                </div>
                 <div id="productCardImages">
                     <img alt="productImage" id="productCardImage" src={`${process.env.PUBLIC_URL}/images/${category}/${id}/1.jpg`}></img>
                     <div id="productCardRating">

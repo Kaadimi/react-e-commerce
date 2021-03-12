@@ -5,3 +5,4 @@ export const GET_PRODUCTS = 'GET_PRODUCTS';
 export const SET_CHART = 'SET_CHART';
 export const SET_LOADING = 'SET_LOADING';
 export const SET_SUGGESTIONS = 'SET_SUGGESTIONS';
+export const CLEAN_PRODUCT_PAGE = 'CLEAN_PRODUCT_PAGE'

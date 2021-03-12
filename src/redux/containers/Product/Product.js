@@ -1,7 +1,8 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 
-import { getProduct } from '../../actions/ProductsActions';
+import { cleanProductPage, getProduct } from '../../actions/ProductsActions';
+import Loading from '../../components/Loading/Loading';
 import PageNotFound from '../../components/PageNotFound/PageNotFound';
 import ProductInfo from '../../components/ProductInfo/ProductInfo';
 import Suggestions from '../../components/Suggestions/Suggestions'
@@ -16,6 +17,10 @@ const Product = (props) => {
     useEffect(() => {
         if (props.match.params.category && props.match.params.id)
             dispatch(getProduct(props.match.params.category, props.match.params.id))
+
+        return (() => {
+            dispatch(cleanProductPage())
+        })
              // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [props.match.params.category, props.match.params.id])
 
@@ -28,7 +33,7 @@ const Product = (props) => {
                 {suggestions && <Suggestions suggestions={suggestions}/>}
             </div>
             : <PageNotFound />}
-            </div> : null} 
+            </div> : <Loading />} 
         </div>
     );
 }

@@ -5,10 +5,12 @@ import ProductCard from '../../components/ProductCard/ProductCard';
 import "./Landing.css"
 import Filters from '../../components/Filters/Filters';
 import { getProducts } from '../../actions/LandingActions';
+import SortProducts from '../../components/SortProducts/SortProducts';
+import Loading from '../../components/Loading/Loading';
 
 const Landing = () => {
     const dispatch = useDispatch();
-    const { products } = useSelector(state => state);
+    const { products, loading } = useSelector(state => state);
 
     useEffect(() => {
         dispatch(getProducts())
@@ -18,9 +20,10 @@ const Landing = () => {
     return (
         <div className="MainContainer">
             <Filters />
-            <div id="productsContainer">
+            <SortProducts />
+            {!loading ? <div id="productsContainer">
                 {products.map((product, i) => <ProductCard key={i} product={product}/>)}
-            </div>
+            </div> : <Loading />}
         </div>
     );
 }

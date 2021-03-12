@@ -1,6 +1,12 @@
 import axios from 'axios'
 
-import { SET_PRODUCT, SET_LOADING, SET_SUGGESTIONS } from "."
+import { SET_PRODUCT, SET_LOADING, SET_SUGGESTIONS, CLEAN_PRODUCT_PAGE } from "."
+
+export const cleanProductPage = () => {
+    return {
+        type: CLEAN_PRODUCT_PAGE
+    }
+}
 
 export const setLoading = (payload) => {
     return {
@@ -21,6 +27,14 @@ export const setSuggestions = (payload) => {
         type: SET_SUGGESTIONS,
         payload
     }
+}
+
+export const daysDifference = (date) => {
+    const difference = Date.now() - date;
+    const days = Math.floor(difference/1000/60/60/24);
+
+    console.log(difference)
+    return days === 1 ? "1 day ago" : `${days} days ago`
 }
 
 export  const ratingToArray = (number) => {

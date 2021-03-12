@@ -16,6 +16,20 @@ export const setProducts = (payload) => {
     }
 }
 
+export const sortProducts = (sort) => (dispatch, getState) => {
+    const { products } = getState();
+
+    console.log(sort)
+    if (sort === "increasing price")
+        dispatch(setProducts(products.sort((a, b) => a.price - b.price)))
+    else if (sort === "decreasing price")
+        dispatch(setProducts(products.sort((a, b) => b.price - a.price)))
+    else if (sort === 'earliest date')
+        dispatch(setProducts(products.sort((a, b) => a.date - b.date)))
+    else if (sort === 'latest date')
+        dispatch(setProducts(products.sort((a, b) => b.date - a.date)))
+}
+
 const filterMachine = (products, filters) => {
     const regex = new RegExp(filters.search, "i");
 
